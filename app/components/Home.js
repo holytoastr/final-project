@@ -1,9 +1,13 @@
 var React = require('react');
+var Search = require('./Search');
 
 var Home = React.createClass({
   render: function() {
     return (
-      <div>Hello world!</div>
+      <div>
+        <h1>Air Quality</h1>
+        <Search />
+      </div>
     )
   }
 });
