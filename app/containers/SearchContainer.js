@@ -2,29 +2,36 @@ var React = require('react');
 var Search = require('../components/Search');
 
 var SearchContainer = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState: function() {
     return {
-      query: ""
+      airLoc: ""
     }
   },
   handleUpdateSearch: function(e) {
     this.setState({
-      query: e.target.value
+      airLoc: e.target.value
     });
   },
   handleSubmitSearch: function(e) {
     e.preventDefault();
-    console.log(this.state.query);
+    console.log(this.state.airLoc);
+    var airLoc = this.state.airLoc
     this.setState({
-      query: ""
+      airLoc: ""
     });
+    this.context.router.push({
+      pathname: '/results/' + this.state.airLoc
+    })
   },
   render: function() {
     return (
       <Search
         onUpdateSearch = {this.handleUpdateSearch}
         onSubmitSearch = {this.handleSubmitSearch}
-        query = {this.state.query}
+        airLoc = {this.state.airLoc}
         />
     )
   }
