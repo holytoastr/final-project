@@ -1,12 +1,12 @@
 var React = require('react');
-var Search = require('./Search');
+var SearchContainer = require('../containers/SearchContainer');
 
 var Home = React.createClass({
   render: function() {
     return (
       <div>
         <h1>Air Quality</h1>
-        <Search />
+        <SearchContainer />
       </div>
     )
   }

@@ -1,31 +1,15 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 
 var Search = React.createClass({
-  getInitialState: function() {
-    return {
-      query: ""
-    }
-  },
-  handleUpdateSearch: function(e) {
-    this.setState({
-      query: e.target.value
-    });
-  },
-  handleSubmitSearch: function(e) {
-    e.preventDefault();
-    console.log(this.state.query);
-    this.setState({
-      query: ""
-    });
-  },
   render: function() {
     return (
       <div className='searchBox'>
-        <form onSubmit={this.handleSubmitSearch}>
+        <form onSubmit={this.props.onSubmitSearch}>
           <input
-            onChange={this.handleUpdateSearch}
+            onChange={this.props.onUpdateSearch}
             type='text'
-            value={this.state.query}
+            value={this.props.query}
             placeholder="Enter your location" />
           <button type='submit'>Search</button>
         </form>
@@ -33,5 +17,11 @@ var Search = React.createClass({
     )
   }
 });
+
+Search.propTypes = {
+  onUpdateSearch: PropTypes.func.isRequired,
+  onSubmitSearch: PropTypes.func.isRequired,
+  query: PropTypes.string.isRequired
+}
 
 module.exports = Search;
