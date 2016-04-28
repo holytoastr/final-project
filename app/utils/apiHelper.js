@@ -6,11 +6,9 @@ var helpers = {
     var location = query.replace(/\s/, '+');
     var url = 'http://localhost:4567/baqi/?location=' + location
 
-    console.log(url);
-
     return axios.get(url)
       .then(function(response){
-        return response.data;
+          return response.data;
       });
   }
   // To implement later

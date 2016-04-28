@@ -14,10 +14,11 @@ var SearchContainer = React.createClass({
     this.setState({
       airLoc: e.target.value
     });
+    // autocomplete will go here
+    // make api request from next state in callback function
   },
   handleSubmitSearch: function(e) {
     e.preventDefault();
-    console.log(this.state.airLoc);
     var airLoc = this.state.airLoc
     this.setState({
       airLoc: ""
