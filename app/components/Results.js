@@ -13,7 +13,7 @@ function Results(props) {
         <h2>Report for: {location}</h2>
         <AirDetails info={props.airQuality} />
         <Link to='/'>
-          <button type='button' className='btn btn-info btn-lg' style={{marginTop: "60px"}}>Return</button>
+          <button type='button' className='btn btn-info btn-lg' style={{marginTop: "60px", marginLeft: "85%"}}>Return</button>
         </Link>
       </div>
 }
