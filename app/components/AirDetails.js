@@ -23,10 +23,11 @@ function AirDetails (data) {
 
 AirDetails.propTypes = {
   info: PropTypes.shape({
-    breezometer_color: PropTypes.string.isRequired,
-    breezometer_aqi: PropTypes.number.isRequired,
-    breezometer_description: PropTypes.string.isRequired,
-    dominant_pollutant_description: PropTypes.string.isRequired,
+    data_valid: PropTypes.bool,
+    breezometer_color: PropTypes.string,
+    breezometer_aqi: PropTypes.number,
+    breezometer_description: PropTypes.string,
+    dominant_pollutant_description: PropTypes.string,
   })
 }
 
