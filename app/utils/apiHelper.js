@@ -4,7 +4,7 @@ var axios = require('axios');
 var helpers = {
   getAirQuality: function(query) {
     var location = query.replace(/\s/, '+');
-    var url = 'http://localhost:4567/baqi/?location=' + location
+    var url = '/baqi/?location=' + location
 
     return axios.get(url)
       .then(function(response){

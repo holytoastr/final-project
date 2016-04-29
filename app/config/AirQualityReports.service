@@ -1,0 +1,19 @@
+[Unit]
+Description=AirQualityReports
+
+[Service]
+WorkingDirectory=/home/lis/final-project
+ExecStart=/usr/local/bin/bundle exec rackup -E production -p 8000
+User=lis
+Group=lis
+UMask=0002
+EnvironmentFile=/home/lis/final-project/secrets.sh
+
+# if we crash, restart
+Restart=always
+KillMode=process
+SyslogIdentifier=AirQualityReports
+
+[Install]
+WantedBy=multi-user.target
+Alias=AirQualityReports.service
