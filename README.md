@@ -23,13 +23,10 @@ Air quality application designed with React
 + A user should be able to use the back button to make a new search (silver)
 - A user should be able to see a historical display of their air quality (gold)
 
-## Wireframes
-
 ## Unsolved problems
-- Need to autocomplete or correct user's spelling
+- Proper error handling so user is not stuck on the loading screen forever when the api cannot return the data
 - Make a second API call in a React way to display historical date range data
 - Figure out how to create a date range in ISO format
-- Determine a timeout
 
 ## Goals
 **Bronze**
