@@ -2,7 +2,7 @@
 Description=AirQualityReports
 
 [Service]
-WorkingDirectory=/home/lis/final-project
+WorkingDirectory=/home/lis/final-project/api_proxy
 ExecStart=/usr/local/bin/bundle exec rackup -E production -p 8000
 User=lis
 Group=lis
