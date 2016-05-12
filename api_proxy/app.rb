@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'net/http'
+require 'json'
 
 set :public_folder, "../dist"
 
@@ -11,10 +12,40 @@ get "/baqi/" do
   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
   response = http.request(Net::HTTP::Get.new(uri.request_uri))
 
-  response.body
-  # add error handling
-  # control for bad data
-    # set defaults for properties
+  data = JSON.parse(response.body)
+
+  if data["data_valid"]
+    return response.body
+  else
+    default = {
+      "country_name": "",
+      "breezometer_aqi": 0,
+      "breezometer_color": "#FFFFFF",
+      "breezometer_description": "Air Quality Report Not Found",
+      "country_aqi": 0,
+      "country_aqi_prefix": "",
+      "country_color": "#FFFFFF",
+      "country_description": "Air Quality Report Not Found",
+      "data_valid": true,
+      "key_valid": true,
+      "random_recommendations": {
+        "children": "",
+        "sport": "",
+        "health": "",
+        "inside": "",
+        "outside": ""
+      },
+      "dominant_pollutant_canonical_name": "No Air Quality Reports Found",
+      "dominant_pollutant_description": "",
+      "dominant_pollutant_text": {
+        "main": "",
+        "effects": "",
+        "causes": ""
+      }
+    }
+    return JSON.generate(default)
+  end
+
 end
 
 get "/" do
