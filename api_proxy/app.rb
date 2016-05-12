@@ -21,7 +21,7 @@ get "/baqi/" do
       "country_name": "",
       "breezometer_aqi": 0,
       "breezometer_color": "#FFFFFF",
-      "breezometer_description": "Air Quality Report Not Found",
+      "breezometer_description": "Air Quality Report Not Found. Please try searching again.",
       "country_aqi": 0,
       "country_aqi_prefix": "",
       "country_color": "#FFFFFF",
@@ -36,7 +36,7 @@ get "/baqi/" do
         "outside": ""
       },
       "dominant_pollutant_canonical_name": "No Air Quality Reports Found",
-      "dominant_pollutant_description": "",
+      "dominant_pollutant_description": "No details found. Please try searching again.",
       "dominant_pollutant_text": {
         "main": "",
         "effects": "",
