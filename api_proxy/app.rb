@@ -18,29 +18,29 @@ get "/baqi/" do
     return response.body
   else
     default = {
-      "country_name": "",
-      "breezometer_aqi": 0,
-      "breezometer_color": "#FFFFFF",
-      "breezometer_description": "Air Quality Report Not Found. Please try searching again.",
-      "country_aqi": 0,
-      "country_aqi_prefix": "",
-      "country_color": "#FFFFFF",
-      "country_description": "Air Quality Report Not Found",
-      "data_valid": true,
-      "key_valid": true,
-      "random_recommendations": {
-        "children": "",
-        "sport": "",
-        "health": "",
-        "inside": "",
-        "outside": ""
+      "country_name"=> "",
+      "breezometer_aqi"=> 0,
+      "breezometer_color"=> "#FFFFFF",
+      "breezometer_description"=> "Air Quality Report Not Found. Please try searching again.",
+      "country_aqi"=> 0,
+      "country_aqi_prefix"=> "",
+      "country_color"=> "#FFFFFF",
+      "country_description"=> "Air Quality Report Not Found",
+      "data_valid"=> true,
+      "key_valid"=> true,
+      "random_recommendations"=> {
+        "children"=> "",
+        "sport"=> "",
+        "health"=> "",
+        "inside"=> "",
+        "outside"=> ""
       },
-      "dominant_pollutant_canonical_name": "No Air Quality Reports Found",
-      "dominant_pollutant_description": "No details found. Please try searching again.",
-      "dominant_pollutant_text": {
-        "main": "",
-        "effects": "",
-        "causes": ""
+      "dominant_pollutant_canonical_name"=> "No Air Quality Reports Found",
+      "dominant_pollutant_description"=> "No details found. Please try searching again.",
+      "dominant_pollutant_text"=> {
+        "main"=> "",
+        "effects"=> "",
+        "causes"=> ""
       }
     }
     return JSON.generate(default)
